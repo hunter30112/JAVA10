@@ -51,24 +51,35 @@ class CTrangle extends CShape
 public class class11 {
 	public static void main(String args[])
 	{
-		CShape shp[]=new CShape[6];
-		shp[1] = new CCircle(2.0);
-		shp[2] = new CCircle(3.0);
-		shp[3] = new CSquare(2.0);
-		shp[4] = new CSquare(2.0);
-		shp[5] = new CTrangle(2,5);
-		shp[6] = new CTrangle(2,6);
-		for(int i=0;i<shp.length;i++)
-		System.out.println("area of shp["+i+"]="+shp[i].area());
+		CCircle cir1 = new CCircle(2.0);
+		CCircle cir2= new CCircle(3.0);
+		CSquare csp1= new CSquare(2.0);
+		CSquare csp2= new CSquare(3.0);
+		CTrangle ctr1= new CTrangle(2,5);
+		CTrangle ctr2= new CTrangle(2,6);
+		double a[]=new double[6];
 		
-		System.out.println("The largest area is "+largest(shp));
+		System.out.println("circle(2.0)="+cir1.area());
+		System.out.println("circle(3.0)="+cir2.area());
+		System.out.println("square(2.0)="+csp1.area());
+		System.out.println("square=(3.0)"+csp2.area());
+		System.out.println("trangle(2,5)="+ctr1.area());
+		System.out.println("trangle=(2,6)"+ctr2.area());
+		
+		a[0]=cir1.area(); 
+		a[1]=cir2.area(); 
+		a[2]=csp1.area(); 
+		a[3]=csp2.area(); 
+		a[4]=ctr1.area(); 
+		a[5]=ctr2.area(); 
+		System.out.println("The largest area is "+largest(a));
 	}
-	public static double largest(CShape a[])
+	public static double largest(double a[])
 	{
-		double max=a[0].area();
+		double max=a[0];
 		for (int i=0; i<a.length; i++)
-			if(max<a[i].area())
-				max=a[i].area();
+			if(max<a[i])
+				max=a[i];
 		return max;
 	}
 
